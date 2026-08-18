@@ -1,0 +1,18 @@
+data_path: data/nhanes_cleaned.csv
+output_dir: results/paper
+tasks: [diabetes, hypertension]
+partitions: [demographic, random]
+random_clients: 10
+models: [mlp, lstm, attention]
+algorithms: [fedavg, fedprox, fedrep, scaffold]
+seeds: [42, 123, 2026]
+test_size: 0.2
+rounds: 200
+local_epochs: 5
+batch_size: 32
+learning_rate: 0.01
+fedprox_mu: 0.01
+early_stopping_patience: 20
+early_stopping_min_delta: 0.001
+weighted_aggregation: false
+
