@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dapfl"
+version = "1.0.0"
+description = "Reproducible implementation of Demography-Aware Personalized Federated Learning"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pandas>=2.1", "PyYAML>=6.0", "scikit-learn>=1.3", "torch>=2.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
