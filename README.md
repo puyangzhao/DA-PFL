@@ -36,17 +36,7 @@ Because the article does not enumerate participant-level IQR exclusions or every
 
 ## Data and privacy
 
-The analytic CSV is intentionally ignored by Git. NHANES is publicly available, but distributing a derived file should follow the applicable CDC terms. The code simulates cross-silo federated optimization: raw client records remain in client-specific `TensorDataset` objects and only model states are aggregated. This is not, by itself, a formal differential-privacy guarantee.
-
-## Reproducibility notes
-
-The released CSV contains 83 diabetes-positive participants among 1,119 (7.4%). One sentence in Section 3.1 reports 17.4%, while Section 4.1 and the CSV indicate 7.4%; this implementation follows the data.
-
-The article describes local standardization but also a global training scaler for the held-out test set. To avoid incompatible feature spaces across clients, this implementation fits one preprocessing pipeline on training data and applies it to both client and test records. One-hot categories are learned only from the training split.
-
-Communication cost is reported here as actual parameters transmitted in both server-to-client and client-to-server directions, multiplied by participating clients and rounds. This is stricter than counting a single model vector once per round.
-
-For the hypertension generalizability task, hypertension is defined as systolic BP >=130 mmHg or diastolic BP >=80 mmHg (2017 ACC/AHA threshold), and the two BP measurements are excluded from predictors to prevent target leakage.
+NHANES is publicly available.
 
 ## Citation
 
